@@ -1,0 +1,22 @@
+name: Notify Teammates
+
+   on:
+     push:
+       branches:
+         - main
+
+   jobs:
+     notify:
+       runs-on: windows
+
+       steps:
+         - name: Notify Teammates
+           uses: dawidd6/action-send-mail@v2
+           with:
+             server_address: smtp.gmail.com
+             server_port: 587
+             username: ${{ secrets.EMAIL_USERNAME }}
+             password: ${{ secrets.EMAIL_PASSWORD }}
+             subject: "New Version Available"
+             to: "narendrakoppera123@gmail.com, adithya.kunda369@gmail.com"
+             body: "A new version of the Python stability script is available. Please update your local copy."

@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Add build steps here
+                bat 'python "D:\\Naren\\Project1\\hello.py"'
             }
         }
     }
